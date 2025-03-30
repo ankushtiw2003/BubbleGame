@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Gilroy", sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(155, 184, 155);
+}
+
+#main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 90vh;
+}
+
+#panel {
+    overflow: hidden;
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Top panel (Hit, Timer, Score) */
+#ptop {
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(72, 104, 72);
+    color: #fff;
+}
+
+.elem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.elem h2 {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.box {
+    color: rgb(18, 119, 57);
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Bubble Container */
+#pbtm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    width: 100%;
+    height: calc(100% - 100px);
+}
+
+/* Bubbles */
+.bubble {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(72, 104, 72);
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 500;
+    font-size: 18px;
+    transition: background-color 0.2s;
+}
+
+.bubble:hover {
+    cursor: pointer;
+    background-color: rgb(50, 75, 50);
+}
+
+/* ======================== RESPONSIVENESS ======================== */
+
+/* 📱 Mobile (Width ≤ 600px) */
+@media (max-width: 600px) {
+    #panel {
+        width: 95%;
+        height: 90%;
+    }
+
+    #ptop {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 10px;
+        text-align: center;
+    }
+
+    .elem {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .elem h2, .box {
+        font-size: 16px;
+    }
+
+    .bubble {
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+    }
+}
+
+/* 📲 Tablets (Width: 601px - 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    #panel {
+        width: 85%;
+        height: 85%;
+    }
+
+    .bubble {
+        width: 55px;
+        height: 55px;
+        font-size: 16px;
+    }
+}
+
+/* 🖥️ Laptops & Desktops (Width ≥ 1025px) */
+@media (min-width: 1025px) {
+    #panel {
+        width: 70%;
+        height: 80%;
+    }
+
+    .bubble {
+        width: 60px;
+        height: 60px;
+        font-size: 18px;
+    }
+}
