@@ -112,9 +112,7 @@ html, body {
 .game-over h1 {
     font-size: 40px;
     font-weight: bold;
-    text-transform: uppercase;
     color: rgb(0, 128, 0);
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
 }
 
 .game-over h2 {
