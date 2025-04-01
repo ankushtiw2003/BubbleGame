@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function startGame() {
     console.log("Game Started!"); // Debugging log
 
-    var timer = 5; // Reset Timer
+    var timer = 60; // Reset Timer
     var score = 0; // Reset Score
     var hitrn; // Store the current number to hit
 
