@@ -1,50 +1,51 @@
+/* Reset Default Styling */
 * {
     margin: 0;
     padding: 0;
-    font-family: "Gilroy", sans-serif;
+    font-family: "Arial", sans-serif;
     box-sizing: border-box;
 }
 
+/* Full Page Layout */
 html, body {
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: rgb(155, 184, 155);
 }
 
+/* Main Container */
 #main {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 90%;
-    height: 90vh;
+    width: 100%;
+    height: 100%;
 }
 
+/* Game Panel */
 #panel {
     overflow: hidden;
     width: 80%;
     height: 80%;
     border-radius: 10px;
     background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Top panel (Hit, Timer, Score) */
+/* Top Panel */
 #ptop {
-    padding: 10px 5%;
+    padding: 10px 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: #fff;
     width: 100%;
     height: 100px;
     background-color: rgb(72, 104, 72);
-    color: #fff;
+    text-align: center;
 }
 
+/* Score, Timer, Hit */
 .elem {
     display: flex;
     align-items: center;
@@ -53,19 +54,21 @@ html, body {
 
 .elem h2 {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .box {
     color: rgb(18, 119, 57);
     font-weight: 600;
-    font-size: 18px;
+    font-size: 20px;
     padding: 10px;
     background-color: white;
     border-radius: 5px;
+    text-align: center;
+    width: 50px;
 }
 
-/* Bubble Container */
+/* Bottom Panel (Bubble Area) */
 #pbtm {
     display: flex;
     justify-content: center;
@@ -86,40 +89,55 @@ html, body {
     height: 60px;
     background-color: rgb(72, 104, 72);
     color: #fff;
-    border-radius: 50%;
-    font-weight: 500;
     font-size: 18px;
-    transition: background-color 0.2s;
+    font-weight: bold;
+    border-radius: 50%;
+    transition: all 0.3s ease;
 }
 
 .bubble:hover {
     cursor: pointer;
     background-color: rgb(50, 75, 50);
+    transform: scale(1.1);
 }
 
-/* ======================== RESPONSIVENESS ======================== */
+/* Game Over Screen */
+.game-over {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: rgb(255, 69, 0);
+    margin-top: 20px;
+}
 
-/* 📱 Mobile (Width ≤ 600px) */
-@media (max-width: 600px) {
+.game-over h1 {
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(0, 128, 0);
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.game-over h2 {
+    font-size: 30px;
+    color: rgb(0, 128, 0);
+    margin-top: 10px;
+}
+
+.game-over span {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) { /* Tablets */
     #panel {
-        width: 95%;
-        height: 90%;
+        width: 90%;
+        height: 85%;
     }
 
     #ptop {
-        flex-direction: column;
-        height: auto;
-        padding: 15px 10px;
-        text-align: center;
-    }
-
-    .elem {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .elem h2, .box {
-        font-size: 16px;
+        padding: 10px 5%;
+        font-size: 18px;
     }
 
     .bubble {
@@ -129,30 +147,41 @@ html, body {
     }
 }
 
-/* 📲 Tablets (Width: 601px - 1024px) */
-@media (min-width: 601px) and (max-width: 1024px) {
+@media (max-width: 480px) { /* Mobile Devices */
     #panel {
-        width: 85%;
-        height: 85%;
+        width: 95%;
+        height: 90%;
     }
 
-    .bubble {
-        width: 55px;
-        height: 55px;
+    #ptop {
+        padding: 10px 5%;
         font-size: 16px;
+        flex-direction: column;
+        height: auto;
     }
-}
 
-/* 🖥️ Laptops & Desktops (Width ≥ 1025px) */
-@media (min-width: 1025px) {
-    #panel {
-        width: 70%;
-        height: 80%;
+    .elem {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #pbtm {
+        gap: 5px;
     }
 
     .bubble {
-        width: 60px;
-        height: 60px;
-        font-size: 18px;
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .game-over h1 {
+        font-size: 30px;
+    }
+
+    .game-over h2 {
+        font-size: 24px;
     }
 }
