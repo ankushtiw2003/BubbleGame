@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bubble</title>
+    <title>Bubble Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
+    <!-- How to Play Modal -->
+    <div id="howToPlayModal" class="modal">
+        <div class="modal-content">
+            <h2>How to Play</h2>
+            <p>1. Click on the bubble that matches the "Hit" number.</p>
+            <p>2. Each correct click adds 10 points to your score.</p>
+            <p>3. The game runs for 60 seconds.</p>
+            <p>4. Try to score as high as possible!</p>
+            <button id="startGameBtn">Start Game</button>
+        </div>
+    </div>
+
     <div id="main">
         <div id="panel">
             <div id="ptop">
                 <div class="elem">
                     <h2>Hit</h2>
-                    <div id="hitval" class="box">5</div>
+                    <div id="hitval" class="box">0</div>
                 </div>
                 <div class="elem">
                     <h2>Timer</h2>
@@ -25,11 +36,10 @@
                     <div id="scoreval" class="box">0</div>
                 </div>
             </div>
-            <div id="pbtm">
-            </div>
+            <div id="pbtm"></div>
         </div>
     </div>
-<script src="script.js"></script>
-</body>
 
+    <script src="script.js"></script>
+</body>
 </html>
